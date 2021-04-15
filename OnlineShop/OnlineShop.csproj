@@ -2006,6 +2006,7 @@
     <Content Include="assets\admin\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="assets\admin\vendor\jquery\jquery.min.map" />
     <Content Include="assets\admin\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Areas\Admin\Views\Shared\_Layouts.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -2036,7 +2037,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="assets\client\" />
     <Folder Include="Models\" />
   </ItemGroup>

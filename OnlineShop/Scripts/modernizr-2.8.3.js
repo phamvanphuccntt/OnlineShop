@@ -60,7 +60,7 @@ window.Modernizr = (function( window, document, undefined ) {
     /*>>prefixes*/
 
     /*>>domprefixes*/
-    // Following spec is to expose vendor-specific style properties as:
+    // Following spec is to expose /assets/admin/vendor-specific style properties as:
     //   elem.style.WebkitBorderRadius
     // and the following would be incorrect:
     //   elem.style.webkitBorderRadius
@@ -291,7 +291,7 @@ window.Modernizr = (function( window, document, undefined ) {
     }
 
     /**
-     * setCssAll extrapolates all vendor-specific css strings.
+     * setCssAll extrapolates all /assets/admin/vendor-specific css strings.
      */
     function setCssAll( str1, str2 ) {
         return setCss(prefixes.join(str1 + ';') + ( str2 || '' ));
@@ -372,7 +372,7 @@ window.Modernizr = (function( window, document, undefined ) {
     /**
      * testPropsAll tests a list of DOM properties we want to check against.
      *   We specify literally ALL possible (known and/or likely) properties on
-     *   the element including the non-vendor prefixed one, for forward-
+     *   the element including the non-/assets/admin/vendor prefixed one, for forward-
      *   compatibility.
      */
     function testPropsAll( prop, prefixed, elem ) {
@@ -489,7 +489,7 @@ window.Modernizr = (function( window, document, undefined ) {
       return !!window.openDatabase;
     };
 
-    // Vendors had inconsistent prefixing with the experimental Indexed DB:
+    // /assets/admin/vendors had inconsistent prefixing with the experimental Indexed DB:
     // - Webkit's implementation is accessible through webkitIndexedDB
     // - Firefox shipped moz_indexedDB before FF4b9, but since then has been mozIndexedDB
     // For speed, we don't test the legacy (and beta-only) indexedDB
@@ -1348,7 +1348,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
     /*>>testallprops*/
     // Modernizr.testAllProps() investigates whether a given style property,
-    //   or any of its vendor-prefixed variants, is recognized
+    //   or any of its /assets/admin/vendor-prefixed variants, is recognized
     // Note that the property names must be provided in the camelCase variant.
     // Modernizr.testAllProps('boxSizing')
     Modernizr.testAllProps  = testPropsAll;
