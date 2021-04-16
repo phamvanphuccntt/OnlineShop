@@ -61,3 +61,7 @@ D:\OnlineShop\OnlineShop\obj\Debug\OnlineShop.dll
 D:\OnlineShop\OnlineShop\obj\Debug\OnlineShop.pdb
 D:\OnlineShop\OnlineShop\bin\EntityFramework.SqlServer.dll
 D:\OnlineShop\OnlineShop\bin\EntityFramework.SqlServer.xml
+D:\OnlineShop\OnlineShop\bin\PagedList.dll
+D:\OnlineShop\OnlineShop\bin\PagedList.Mvc.dll
+D:\OnlineShop\OnlineShop\bin\PagedList.xml
+D:\OnlineShop\OnlineShop\bin\PagedList.Mvc.xml

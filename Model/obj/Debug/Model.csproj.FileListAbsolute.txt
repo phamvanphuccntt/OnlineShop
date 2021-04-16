@@ -10,3 +10,7 @@ D:\OnlineShop\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 D:\OnlineShop\Model\obj\Debug\Model.csproj.CopyComplete
 D:\OnlineShop\Model\obj\Debug\Model.dll
 D:\OnlineShop\Model\obj\Debug\Model.pdb
+D:\OnlineShop\Model\bin\Debug\PagedList.dll
+D:\OnlineShop\Model\bin\Debug\PagedList.Mvc.dll
+D:\OnlineShop\Model\bin\Debug\PagedList.xml
+D:\OnlineShop\Model\bin\Debug\PagedList.Mvc.xml
