@@ -74,5 +74,18 @@ namespace OnlineShop.Areas.Admin.Controllers
             }
             return View("Index");
         }
+
+        public ActionResult Delete(int id) {
+            var check = new UserDao().Delete(id);
+            if (check == true)
+            {
+                return RedirectToAction("Index","User");
+            }
+            else
+            {
+                ModelState.AddModelError("","Xóa không thành công");
+            }
+            return View("Index");
+        }
     }
 }

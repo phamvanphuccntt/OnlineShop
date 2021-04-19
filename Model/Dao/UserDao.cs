@@ -91,5 +91,16 @@ namespace Model.Dao
         public User ViewDetail(int id) {
             return db.Users.Find(id);
         }
+
+        public bool Delete(int id)
+        {
+            var user = db.Users.Find(id);
+            if (user != null) {
+                db.Users.Remove(user);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }
