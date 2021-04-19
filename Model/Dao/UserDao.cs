@@ -56,6 +56,7 @@ namespace Model.Dao
         public IEnumerable<User> ListAllPaging(string searchString, int page, int pageSize)
         {
             IQueryable<User> model = db.Users;
+            // SearchString
             if (!string.IsNullOrEmpty(searchString))
             {
                 model = model.Where(x => x.UserName.Contains(searchString) || x.Name.Contains(searchString));
