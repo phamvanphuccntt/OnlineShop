@@ -3014,6 +3014,7 @@
     <Content Include="assets\admin\js\plugin\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="assets\admin\js\plugin\ckeditor\skins\moono\images\Thumbs.db" />
     <Content Include="assets\admin\js\plugin\ckeditor\skins\moono\readme.md" />
+    <Content Include="Areas\Admin\Views\Shared\_Navigation.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
