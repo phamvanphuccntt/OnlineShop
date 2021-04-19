@@ -8,6 +8,7 @@
 @section header{
     Danh sách người dùng
 }
+
 <div class="row">
     <div class="card-body">
         @using (Html.BeginForm("Index", "User", FormMethod.Get))
@@ -17,7 +18,7 @@
                     <div class="col-md-4">
                         <input type="text" value="@ViewBag.SearchString" class="form-control" name="searchString" />
                     </div>
-                    <hr/>
+                    <hr />
                     <div class="col-md-4">
                         <button type="submit" class="btn btn-success">Tìm kiếm</button>
                         <a class="btn btn-primary" href="/Admin/User/Create">Thêm mới</a>
@@ -25,44 +26,45 @@
                 </div>
             </div>
         }
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover">
-                    <thead>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Tài khoản</th>
+                        <th>Họ và tên</th>
+                        <th>Email</th>
+                        <th>Điện thoại</th>
+                        <th>Địa chỉ</th>
+                        <th>Trạng thái</th>
+                        <th>Tùy chọn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
                         <tr>
-                            <th>Tài khoản</th>
-                            <th>Họ và tên</th>
-                            <th>Email</th>
-                            <th>Điện thoại</th>
-                            <th>Địa chỉ</th>
-                            <th>Trạng thái</th>
-                            <th>Tùy chọn</th>
+                            <td>@item.UserName</td>
+                            <td>@item.Name</td>
+                            <td>@item.Email</td>
+                            <td>@item.Phone</td>
+                            <td>@item.Address</td>
+                            <td>@Html.Raw(@item.Status ? "Kích hoạt" : "Khóa")</td>
+                            <td>
+                                <a href="/Admin/User/Edit/@item.ID">Sửa</a>
+                                <a href="/Admin/User/Delete/@item.ID">Xóa</a>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>@item.UserName</td>
-                                <td>@item.Name</td>
-                                <td>@item.Email</td>
-                                <td>@item.Phone</td>
-                                <td>@item.Address</td>
-                                <td>@Html.Raw(@item.Status ? "Kích hoạt":"Khóa")</td>
-                                <td>
-                                    <a href="/Admin/User/Edit/@item.ID">Sửa</a>
-                                    <a href="/Admin/User/Delete/@item.ID">Xóa</a>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-                <nav>
-                    <ul class="pagination">
-                        <li>
-                            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @searchString = @ViewBag.SearchString }))
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+                    }
+                </tbody>
+            </table>
+            <nav>
+                <ul class="pagination">
+                    <li>
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @searchString = @ViewBag.SearchString }))
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
+
 </div>

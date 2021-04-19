@@ -48,5 +48,31 @@ namespace OnlineShop.Areas.Admin.Controllers
             }
             return View("Index");
         }
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var user = new UserDao().ViewDetail(id);
+            return View(user);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new UserDao();
+                
+                var result = dao.Update(user);
+                if (result)
+                {
+                    return RedirectToAction("Index", "User");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Cập nhật User thành công");
+                }
+            }
+            return View("Index");
+        }
     }
 }

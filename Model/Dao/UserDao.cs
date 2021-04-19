@@ -63,6 +63,33 @@ namespace Model.Dao
 
             return model.OrderByDescending(x => x.CreateDate).ToPagedList(page, pageSize);
         }
+        public bool Update(User user) {
 
+            try
+            {
+                var u = db.Users.Find(user.ID);
+
+                u.Name = user.Name;
+                u.Address = user.Address;
+                u.Email = user.Email;
+                u.Phone = user.Phone;
+                u.Status = user.Status;
+                u.ModifiedBy = user.ModifiedBy;
+                u.ModifiedDate = DateTime.Now;
+
+                db.SaveChanges();
+
+                return true;
+            }
+            catch (Exception e) {
+                
+                return false;
+            }
+            
+        }
+
+        public User ViewDetail(int id) {
+            return db.Users.Find(id);
+        }
     }
 }
