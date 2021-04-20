@@ -88,5 +88,14 @@ namespace OnlineShop.Areas.Admin.Controllers
             }
             return View("Index");
         }
+
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new UserDao().ChangeStatus(id);
+            return Json(new
+            {
+                status = result
+            });
+        }
     }
 }

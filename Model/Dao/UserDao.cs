@@ -103,5 +103,13 @@ namespace Model.Dao
             }
             return false;
         }
+
+        public bool ChangeStatus(long id)
+        {
+            var user = db.Users.Find(id);
+            user.Status = !user.Status;
+            db.SaveChanges();
+            return user.Status;
+        }
     }
 }
