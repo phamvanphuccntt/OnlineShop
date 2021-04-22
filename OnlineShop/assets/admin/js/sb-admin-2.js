@@ -53,4 +53,6 @@
     e.preventDefault();
   });
 
+  $('#AlertBox').removeClass('hide');
+  $('#AlertBox').delay(1000).slideUp(500);
 })(jQuery); // End of use strict
