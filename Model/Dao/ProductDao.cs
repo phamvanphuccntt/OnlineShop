@@ -22,5 +22,10 @@ namespace Model.Dao
         {
             return db.Products.Where(x => x.TopHot != null && x.TopHot > DateTime.Now).OrderByDescending(x => x.CreateDate).Take(top).ToList();
         }
+
+        public Product viewDetail(long id)
+        {
+            return db.Products.Find(id);
+        }
     }
 }

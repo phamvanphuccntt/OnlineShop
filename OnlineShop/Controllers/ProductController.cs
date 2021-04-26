@@ -19,5 +19,15 @@ namespace OnlineShop.Controllers
             return PartialView(model);
         }
         
+        public ActionResult Category(long cateID) {
+            var category = new CategoryDao().viewDetail(cateID);
+            return View(category);
+        }
+
+        public ActionResult Detail(long id)
+        {
+            var product = new ProductDao().viewDetail(id);
+            return View(product);
+        }
     }
 }
