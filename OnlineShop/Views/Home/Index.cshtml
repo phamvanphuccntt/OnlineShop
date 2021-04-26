@@ -4,12 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     var slides = (List<Model.EF.Slide>)ViewBag.Slides;
     var listNewProduct = (List<Model.EF.Product>)ViewBag.NewProducts;
-    var listFeatureProduct= (List<Model.EF.Product>)ViewBag.ListFeatureProducts;
+    var listFeatureProduct = (List<Model.EF.Product>)ViewBag.ListFeatureProducts;
 }
 @section slide{
     <div class="header_slide">
         <div class="header_bottom_left">
-            @{ Html.RenderAction("ProductCategory", "Product");}
+            <div class="categories">
+                @{ Html.RenderAction("ProductCategory", "Product");}
+            </div>
         </div>
         <div class="header_bottom_right">
             <div class="slider">
@@ -60,7 +62,7 @@
                 <h2>Lorem Ipsum is simply </h2>
                 <div class="price-details">
                     <div class="price-number">
-                        <p><span class="rupees">@(item.Price.HasValue?item.Price.Value.ToString("N0"):"Liên hệ")</span></p>
+                        <p><span class="rupees">@(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Liên hệ")</span></p>
                     </div>
                     <div class="add-cart">
                         <h4><a href="@url">Thêm vào giỏ</a></h4>

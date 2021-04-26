@@ -19,5 +19,15 @@ namespace Model.Dao
         {
             return db.ProductCategories.Where(x => x.Status == true).OrderBy(x=>x.DisplayOrder).ToList();
         }
+
+        public ProductCategory viewDetail(long id) {
+            var product = db.ProductCategories.Find(id);
+            return product;
+        }
+
+        public List<Product> relatedProduct(long productId) {
+            var product = db.Products.Find(productId);
+            return db.Products.Where(x=>x.ID != productId && x.CategoryID == product.CategoryID).ToList();
+        }
     }
 }

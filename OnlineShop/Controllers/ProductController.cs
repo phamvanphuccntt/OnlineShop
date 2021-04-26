@@ -27,6 +27,8 @@ namespace OnlineShop.Controllers
         public ActionResult Detail(long id)
         {
             var product = new ProductDao().viewDetail(id);
+            ViewBag.Category = new ProductCategoryDao().viewDetail(product.CategoryID.Value);
+            ViewBag.RelatedProduct = new ProductCategoryDao().relatedProduct(product.ID);
             return View(product);
         }
     }
