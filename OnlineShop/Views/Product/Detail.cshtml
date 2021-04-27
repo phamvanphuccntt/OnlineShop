@@ -6,12 +6,10 @@
     var relatedProduct = (List<Model.EF.Product>)ViewBag.RelatedProduct;
 }
 
-<h2>@Model.Name</h2>
-
 <div class="content">
     <div class="content_top">
         <div class="back-links">
-            <p><a href="/">Trang chủ</a> >>>> <a href="/san-pham/@category.MetaTitle-@category.ID">@category.Name</a></p>
+            <p style="width:300px"><a href="/">Trang chủ</a> >>>> <a href="/san-pham/@category.MetaTitle-@category.ID">@category.Name</a></p>
         </div>
         <div class="clear"></div>
     </div>
@@ -98,12 +96,6 @@
             </div>
             <div class="product_desc">
                 <div id="horizontalTab">
-                    <ul class="resp-tabs-list">
-                        <li>Product Details</li>
-                        <li>product Tags</li>
-                        <li>Product Reviews</li>
-                        <div class="clear"></div>
-                    </ul>
                     <div class="resp-tabs-container">
                         <div class="product-desc">
                             @Html.Raw(Model.Detail)
@@ -172,7 +164,7 @@
                     var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
                     <div class="grid_1_of_4 images_1_of_4">
                         <a href="@url"><img src="@item.Image" alt=""></a>
-                        <div class="price" style="border:none">
+                        <div class="price" >
                             <div class="add-cart" style="float:none">
                                 <h4><a href="@url">Thêm vào giỏ</a></h4>
                             </div>

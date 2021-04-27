@@ -77,126 +77,52 @@
 	border:1px solid #7f7f7f;
 	margin:0;
 }
-@media only screen and (max-width: 1440px) {
-	#products .next {
-		left: 318px;
-	}
-}
-@media only screen and (max-width: 1366px) {
-	#products .next {
-		left: 300px;
-	}
-}
-@media only screen and (max-width: 1280px) {
-	#products .next {
-		left: 380px;
-	}
-	}
 @media only screen and (max-width: 1024px) {
+	.slides_container a {
+		width:265px;
+		padding-top:40px;
+	}
 	#products .pagination li {
 		margin:2px 14px;
 	}
 	#products .next {
-		left: 496px;
+		left: 243px;
    }
-}
-@media only screen and (max-width: 991px) {
-		
-	#products .pagination li {
-		margin: 2px 12.6px;
-	}
-	#products .next {
-		left: 474px;
-	}
-	
-}
-@media only screen and (max-width: 900px) {
-	#products .pagination li {
-		margin: 2px 8.7px;
-	}
-	#products .next {
-		left: 432px;
-	}
 }
 @media only screen and (max-width: 800px) {
 	.slides_container a{
 		width:320px;
 	}
 	#products .pagination li {
-		margin: 2px 6.3px;
+		margin:2px 10px;
 	}
 	#products .next {
-		left: 403px;
+		left: 295px;
    }
 }
-@media only screen and (max-width: 768px) {
-	#products .pagination li {
-		margin: 2px 4.85px;
-	}
-	#products .next {
-		left: 387px;
-	}
-	.span_3_of_2 .button a {
-		padding: 7px 16px;
-		font-size: 0.97em;
-	}
-	
-	
-}
-@media only screen and (max-width: 736px) {
-	#products .slides_container {
-		width: 97.5%;
-	}
-}
 @media only screen and (max-width: 640px) {
-		/*.slides_container a{
-		width:250px;
-   } */
-     #products .next {
-   	 left: 372px;
-	}
-	#products .slides_container {
-		width: 99.5%;
-	}
-}
-@media only screen and (max-width: 600px) {
-	#products .next {
-		left: 378px;
-	}
+.slides_container a{
+	width:250px;
+  }
+  #products .next{
+  	left:230px;
+  }
 }
 @media only screen and (max-width: 480px) {
-	.slides_container a{
-		width:340px;
-		padding-top:0;
-	}
-	#products .next {
-		left: 343px;
-	}
-	#products .pagination li {
-		margin: 2px 1.4px;
-	}
+.slides_container a{
+	width:400px;
+    padding-top:0;
 }
-@media only screen and (max-width: 384px) {
-	#products .next {
-		left: 315px;
-	}
-	#products .pagination li a {
-		width: 50.5px;
-	}
+#products .next{
+	left:403px;
 }
-@media only screen and (max-width:375px) {
-	
-	#products .pagination li a {
-		width: 49px;
-	}
+#products .pagination li{
+	margin:2px 6.6px;
+}
 }
 @media only screen and (max-width:320px) {
 #products .next{
 	left:255px;
-}
-#products .pagination li a {
-	width: 33.4px;
-	height:28px;
 }
 .slides_container a{
 	width:285px;
@@ -214,5 +140,7 @@
 .signup{
 	width:98%;
 }
-
+.signup input[type="submit"]{
+	width:69px;
+}
 }
