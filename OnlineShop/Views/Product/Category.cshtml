@@ -15,6 +15,7 @@
         </div>
         <div class="clear"></div>
     </div>
+    <br/>
     <div class="section group">
 
         @foreach (var item in Model)
@@ -28,7 +29,7 @@
                         <p><span class="rupees">@(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Liên hệ")</span></p>
                     </div>
                     <div class="add-cart">
-                        <h4><a href="/gio-hang/@item.ID">Thêm vào giỏ</a></h4>
+                        <h4><a href="/them-gio-hang?productId=@item.ID&quantity=1">Thêm vào giỏ</a></h4>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -80,7 +81,7 @@
         }
         else
         {
-            <span>Không có bản ghi nào</span>
+            <span class="alert alert-danger">Không có bản ghi nào</span>
         }
     </div>
 </div>

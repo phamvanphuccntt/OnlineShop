@@ -1,4 +1,5 @@
-﻿var cart = {
+﻿
+var cart = {
     init: function () {
         cart.regEvents();
     },
@@ -20,7 +21,6 @@
                     }
                 });
             });
-
             $.ajax({
                 url: '/Cart/Update',
                 data: { cartModel: JSON.stringify(cartList) },
@@ -35,8 +35,6 @@
         });
 
         $('#btnDeleteAll').off('click').on('click', function () {
-
-
             $.ajax({
                 url: '/Cart/DeleteAll',
                 dataType: 'json',
@@ -49,11 +47,11 @@
             })
         });
 
-        $('.btn-delete').off('click').on('click', function (e) {
+        $('.btnDelete').off('click').on('click', function (e) {
             e.preventDefault();
             $.ajax({
-                data: { id: $(this).data('id') },
                 url: '/Cart/Delete',
+                data: { id: $(this).data('id') },
                 dataType: 'json',
                 type: 'POST',
                 success: function (res) {

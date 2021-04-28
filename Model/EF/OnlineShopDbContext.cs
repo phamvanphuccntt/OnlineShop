@@ -8,7 +8,7 @@ namespace Model.EF
     public partial class OnlineShopDbContext : DbContext
     {
         public OnlineShopDbContext()
-            : base("name=OnlineShop")
+            : base("name=OnlineShopDbContext")
         {
         }
 
@@ -21,9 +21,13 @@ namespace Model.EF
         public virtual DbSet<Footer> Footers { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
         public virtual DbSet<MenuType> MenuTypes { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }
         public virtual DbSet<Slide> Slides { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<SystemConfig> SystemConfigs { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
@@ -85,6 +89,10 @@ namespace Model.EF
                 .Property(e => e.ID)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<OrderDetail>()
+                .Property(e => e.Price)
+                .HasPrecision(18, 0);
+
             modelBuilder.Entity<Product>()
                 .Property(e => e.Code)
                 .IsUnicode(false);
@@ -135,6 +143,10 @@ namespace Model.EF
 
             modelBuilder.Entity<Slide>()
                 .Property(e => e.ModifiedBy)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SystemConfig>()
+                .Property(e => e.ID)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Tag>()
