@@ -1,4 +1,4 @@
-﻿@model List<Model.EF.Product>
+﻿@model List<Model.ViewModel.ProductViewModel>
 @{
     var productCategory = (Model.EF.ProductCategory)ViewBag.ProductCategory;
     ViewBag.Title = productCategory.Name;
@@ -22,7 +22,7 @@
         {
             var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
             <div class="grid_1_of_4 images_1_of_4">
-                <a href="@url"><img src="@item.Image" alt="@item.Name" /></a>
+                <a href="@url"><img src="@item.Images" alt="@item.Name" /></a>
                 <h2>@item.Name </h2>
                 <div class="price-details">
                     <div class="price-number">
@@ -38,7 +38,7 @@
         }
         <div class="clear"></div>
         <!-- Pagination -->
-        @if (ViewBag.TotalPage > 1)
+        @if (ViewBag.TotalPage > 0)
         {
             var pageDisplay = (int)ViewBag.MaxPage;
             int totalPage = (int)ViewBag.TotalPage;

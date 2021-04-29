@@ -1,4 +1,5 @@
 ﻿using Model.EF;
+using Model.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,11 +33,28 @@ namespace Model.Dao
         /// </summary>
         /// <param name="categoryId"></param>
         /// <returns></returns>
-        public List<Product> listAllCategoryId(long categoryID,ref int totalRecord, int pageIndex, int pageSize)
+        public List<ProductViewModel> listAllCategoryId(long categoryID,ref int totalRecord, int pageIndex, int pageSize)
         {
             totalRecord = db.Products.Where(x => x.CategoryID == categoryID).Count();
-            var model = db.Products.Where(x => x.CategoryID == categoryID).OrderByDescending(x=>x.CreateDate).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
-            return model;
+            // lấy model sử dụng linQ
+            var model = from p in db.Products
+                        join pc in db.ProductCategories
+                        on p.CategoryID equals pc.ID
+                        where p.CategoryID == categoryID
+                        select new ProductViewModel() {
+                            ID = p.ID,
+                            Images = p.Image,
+                            Name = p.Name,
+                            Price = p.Price,
+                            CateName = pc.Name,
+                            CateMetaTitle = pc.MetaTitle,
+                            MetaTitle = p.MetaTitle,
+                            CreateDate = p.CreateDate
+                        };
+            // var model = db.Products.Where(x=>x.CategoryID == categoryID);
+            model.OrderByDescending(x => x.CreateDate).Skip((pageIndex - 1) * pageSize).Take(pageSize);
+
+            return model.ToList();
         }
     }
 }

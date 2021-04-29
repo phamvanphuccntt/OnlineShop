@@ -19,7 +19,7 @@ namespace OnlineShop.Controllers
             return PartialView(model);
         }
         
-        public ActionResult Category(long cateID, int page = 1, int pageSize = 1) {
+        public ActionResult Category(long cateID, int page = 1, int pageSize = 2) {
 
             var productCategory = new CategoryDao().viewDetail(cateID);
             ViewBag.ProductCategory = productCategory;
@@ -29,7 +29,7 @@ namespace OnlineShop.Controllers
             ViewBag.Total = totalRecord;
             ViewBag.Page = page;
 
-            int maxPage = 2;
+            int maxPage = 3;
             int totalPage = 0;
 
             totalPage = (int)Math.Ceiling((double)(totalRecord / pageSize));
