@@ -13,3 +13,4 @@ D:\OnlineShop\Model\bin\Debug\PagedList.dll
 D:\OnlineShop\Model\bin\Debug\PagedList.Mvc.dll
 D:\OnlineShop\Model\bin\Debug\PagedList.xml
 D:\OnlineShop\Model\bin\Debug\PagedList.Mvc.xml
+D:\OnlineShop\Model\obj\Debug\Model.csprojAssemblyReference.cache

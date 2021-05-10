@@ -65,3 +65,5 @@ D:\OnlineShop\OnlineShop\bin\PagedList.dll
 D:\OnlineShop\OnlineShop\bin\PagedList.Mvc.dll
 D:\OnlineShop\OnlineShop\bin\PagedList.xml
 D:\OnlineShop\OnlineShop\bin\PagedList.Mvc.xml
+D:\OnlineShop\OnlineShop\bin\Common.dll
+D:\OnlineShop\OnlineShop\bin\Common.pdb
