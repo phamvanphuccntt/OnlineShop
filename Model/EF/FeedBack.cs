@@ -9,7 +9,6 @@ namespace Model.EF
     [Table("FeedBack")]
     public partial class FeedBack
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
         [StringLength(50)]
