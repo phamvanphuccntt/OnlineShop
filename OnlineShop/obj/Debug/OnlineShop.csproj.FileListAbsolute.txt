@@ -67,3 +67,8 @@ D:\OnlineShop\OnlineShop\bin\PagedList.xml
 D:\OnlineShop\OnlineShop\bin\PagedList.Mvc.xml
 D:\OnlineShop\OnlineShop\bin\Common.dll
 D:\OnlineShop\OnlineShop\bin\Common.pdb
+D:\OnlineShop\OnlineShop\bin\BotDetect.dll
+D:\OnlineShop\OnlineShop\bin\BotDetect.Web.Mvc.dll
+D:\OnlineShop\OnlineShop\bin\System.Data.SQLite.dll
+D:\OnlineShop\OnlineShop\bin\Common.dll.config
+D:\OnlineShop\OnlineShop\bin\System.Data.SQLite.xml

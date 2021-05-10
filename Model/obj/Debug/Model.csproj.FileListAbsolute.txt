@@ -14,3 +14,7 @@ D:\OnlineShop\Model\bin\Debug\PagedList.Mvc.dll
 D:\OnlineShop\Model\bin\Debug\PagedList.xml
 D:\OnlineShop\Model\bin\Debug\PagedList.Mvc.xml
 D:\OnlineShop\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\OnlineShop\Model\bin\Debug\BotDetect.dll
+D:\OnlineShop\Model\bin\Debug\BotDetect.Web.Mvc.dll
+D:\OnlineShop\Model\bin\Debug\System.Data.SQLite.dll
+D:\OnlineShop\Model\bin\Debug\System.Data.SQLite.xml

@@ -4,3 +4,9 @@ D:\OnlineShop\Common\obj\Debug\Common.csprojAssemblyReference.cache
 D:\OnlineShop\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 D:\OnlineShop\Common\obj\Debug\Common.dll
 D:\OnlineShop\Common\obj\Debug\Common.pdb
+D:\OnlineShop\Common\bin\Debug\BotDetect.dll
+D:\OnlineShop\Common\obj\Debug\Common.csproj.CopyComplete
+D:\OnlineShop\Common\bin\Debug\Common.dll.config
+D:\OnlineShop\Common\bin\Debug\BotDetect.Web.Mvc.dll
+D:\OnlineShop\Common\bin\Debug\System.Data.SQLite.dll
+D:\OnlineShop\Common\bin\Debug\System.Data.SQLite.xml

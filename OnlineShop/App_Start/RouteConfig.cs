@@ -69,6 +69,15 @@ namespace OnlineShop
                namespaces: new[] { "OnlineShop.Controllers" }
            );
             routes.MapRoute(
+               name: "Register",
+               url: "dang-ky",
+               defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional },
+               namespaces: new[] { "OnlineShop.Controllers" }
+           );
+
+            routes.IgnoreRoute("{*bitdetect}", new { botdetect = @"(.*)BotDetectCaptcha\.ashx"});
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
