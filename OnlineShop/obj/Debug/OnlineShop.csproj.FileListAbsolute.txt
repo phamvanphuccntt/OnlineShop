@@ -72,3 +72,5 @@ D:\OnlineShop\OnlineShop\bin\BotDetect.Web.Mvc.dll
 D:\OnlineShop\OnlineShop\bin\System.Data.SQLite.dll
 D:\OnlineShop\OnlineShop\bin\Common.dll.config
 D:\OnlineShop\OnlineShop\bin\System.Data.SQLite.xml
+D:\OnlineShop\OnlineShop\bin\Facebook.dll
+D:\OnlineShop\OnlineShop\bin\Facebook.xml

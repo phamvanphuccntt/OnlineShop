@@ -120,5 +120,21 @@ namespace Model.Dao
         {
             return db.Users.Count(x => x.Email == email) > 0;
         }
+
+        public long InsertForFacebook(User user)
+        {
+            var users = db.Users.SingleOrDefault(x => x.UserName == user.UserName);
+            if (users == null)
+            {
+                db.Users.Add(user);
+                db.SaveChanges();
+                return user.ID;
+            }
+            else
+            {
+                return users.ID;
+            }
+            
+        }
     }
 }
