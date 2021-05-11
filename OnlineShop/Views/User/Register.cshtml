@@ -11,11 +11,16 @@
 
     <div class="form-horizontal">
         <br />
-        <h1>Đăng ký tài khoản</h1>
+        <h1 style="font-size:40px">Đăng ký tài khoản</h1>
         <hr />
-        <div class="row" style="margin-left:120px">
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label class = "control-label col-md-2"></label>
+            <div class="col-md-4">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </div>
         </div>
+
         <br />
         @if (ViewBag.Success != null)
         {
@@ -28,62 +33,62 @@
         }
         <div class="form-group">
             @Html.LabelFor(model => model.userName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.userName, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.userName, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.userName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-4">
+                @Html.PasswordFor(model => model.password, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.confirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.PasswordFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-4">
+                @Html.PasswordFor(model => model.confirmPassword, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.confirmPassword, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.name, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.address, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextAreaFor(model => model.address, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-4">
+                @Html.TextAreaFor(model => model.address, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.email, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.phone, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.phone, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.phone, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-2 col-md-4">
                 <input type="submit" value="Đăng ký" class="btn btn-success" />
             </div>
         </div>

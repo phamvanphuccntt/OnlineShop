@@ -12,6 +12,7 @@ namespace OnlineShop
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{*bitdetect}", new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
 
             routes.MapRoute(
                name: "Product Category",
@@ -75,7 +76,12 @@ namespace OnlineShop
                namespaces: new[] { "OnlineShop.Controllers" }
            );
 
-            routes.IgnoreRoute("{*bitdetect}", new { botdetect = @"(.*)BotDetectCaptcha\.ashx"});
+            routes.MapRoute(
+               name: "Login",
+               url: "dang-nhap",
+               defaults: new { controller = "User", action = "Login", id = UrlParameter.Optional },
+               namespaces: new[] { "OnlineShop.Controllers" }
+           );
 
             routes.MapRoute(
                 name: "Default",
