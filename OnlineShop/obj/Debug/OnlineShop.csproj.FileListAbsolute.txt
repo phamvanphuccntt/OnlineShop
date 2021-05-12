@@ -74,3 +74,6 @@ D:\OnlineShop\OnlineShop\bin\Common.dll.config
 D:\OnlineShop\OnlineShop\bin\System.Data.SQLite.xml
 D:\OnlineShop\OnlineShop\bin\Facebook.dll
 D:\OnlineShop\OnlineShop\bin\Facebook.xml
+D:\OnlineShop\OnlineShop\bin\StaticResources.dll
+D:\OnlineShop\OnlineShop\bin\StaticResources.pdb
+D:\OnlineShop\OnlineShop\bin\en\StaticResources.resources.dll

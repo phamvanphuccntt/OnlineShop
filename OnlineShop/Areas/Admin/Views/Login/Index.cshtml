@@ -34,34 +34,67 @@
                                     {
                                         @Html.ValidationSummary(false, "", new { @class = "text-danger" });
                                         <div class="form-group">
-                                            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @autofocus = "autofocus" })
+                                            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-6" })
+                                            <div class="col-md-12">
+                                                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @autofocus = "autofocus" })
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            @Html.PasswordFor(model => model.PassWord, new { @class = "form-control" })
+                                            @Html.LabelFor(model => model.PassWord, htmlAttributes: new { @class = "control-label col-md-6" })
+                                            <div class="col-md-12">
+                                                @Html.PasswordFor(model => model.PassWord, new { @class = "form-control", @autofocus = "autofocus" })
+                                            </div>
                                         </div>
                                         <div class="form-group">
-
-                                            @Html.CheckBoxFor(model => model.RememberMe) Remember Me
-
-
+                                            <div class="col-md-12">
+                                                @Html.CheckBoxFor(model => model.RememberMe)
+                                                @Html.LabelFor(model => model.RememberMe)
+                                            </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </button>
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn btn-primary col-md-12">
+                                                    Login
+                                                </button>
+                                            </div>
+                                        </div>
+
                                         <hr>
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <a href="index.html" class="btn btn-google btn-user btn-block">
+                                                    <i class="fab fa-google fa-fw"></i> Login with Google
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                                    <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                                                </a>
+                                            </div>
+                                        </div>
                                     }
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <a class="small" href="forgot-password.html">Forgot Password? </a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="register.html">Create an Account!</a>
+                                    </div>
+                                    <div class="row small">
+                                        <a href="" class="text-center">
+                                            Language : 
+                                        </a>
+                                        @using (Html.BeginForm("ChangeCulture", "Login"))
+                                        {
+                                            @Html.Hidden("returnUrl", Request.RawUrl)
+                                            @Html.DropDownList("ddlCulture", new SelectList(new[] {
+                                                new {value="vi",text=StaticResources.Resources.Vietnamese},
+                                                new {value="en",text=StaticResources.Resources.English},
+
+                                                }, "value", "text", Session[OnlineShop.Common.CommonConstants.CurrentCulture]),new { onchange="this.form.submit();"})
+                                        }
                                     </div>
                                 </div>
                             </div>

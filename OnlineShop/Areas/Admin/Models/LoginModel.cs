@@ -8,10 +8,15 @@ namespace OnlineShop.Areas.Admin.Models
 {
     public class LoginModel
     {
-        [Required(ErrorMessage ="Mời nhập user name")]
+        [Required(ErrorMessageResourceName = "Username_Required", ErrorMessageResourceType = typeof(StaticResources.Resources))]
+        [Display(Name ="Username", ResourceType = typeof(StaticResources.Resources))]
         public string UserName { set; get; }
-        [Required(ErrorMessage ="Mời nhập password")]
+
+        [Required(ErrorMessageResourceName = "Password_Required", ErrorMessageResourceType = typeof(StaticResources.Resources))]
+        [Display(Name ="Password", ResourceType = typeof(StaticResources.Resources))]
         public string PassWord { set; get; }
+
+        [Display(Name = "RememberMe", ResourceType = typeof(StaticResources.Resources))]
         public bool RememberMe { set; get; }
     }
 }

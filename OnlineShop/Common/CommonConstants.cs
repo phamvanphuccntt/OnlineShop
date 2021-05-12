@@ -9,5 +9,6 @@ namespace OnlineShop.Common
     {
         public static string USER_SESSION = "USER_SESSION";
         public static string CartSession = "CartSession";
+        public static string CurrentCulture { get; set; }
     }
 }

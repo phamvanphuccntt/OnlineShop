@@ -70,6 +70,20 @@
                                 </form>
                             </div>
                         </li>
+                        <li class="nav-item dropdown no-arrow">
+                            <div class="navbar navbar-expand navbar-light  topbar mb-4 static-top ">
+                                @using (Html.BeginForm("ChangeCulture", "Base"))
+                                {
+                                    @Html.Hidden("returnUrl", Request.RawUrl)
+                                    @Html.DropDownList("ddlCulture", new SelectList(new[] {
+                                        new {value="vi",text=StaticResources.Resources.Vietnamese},
+                                        new {value="en",text=StaticResources.Resources.English},
+
+                                        }, "value", "text", Session[OnlineShop.Common.CommonConstants.CurrentCulture]),new { onchange="this.form.submit();"})
+                                }
+                            </div>
+                            
+                        </li>
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"

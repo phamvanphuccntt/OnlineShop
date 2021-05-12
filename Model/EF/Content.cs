@@ -54,5 +54,7 @@ namespace Model.EF
 
         [StringLength(500)]
         public string Tag { get; set; }
+
+        public string Language { get; set; }
     }
 }

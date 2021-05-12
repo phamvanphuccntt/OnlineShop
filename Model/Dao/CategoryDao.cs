@@ -23,5 +23,12 @@ namespace Model.Dao
         {
             return db.ProductCategories.Find(id);
         }
+
+        public long Insert(Category model)
+        {
+            db.Categories.Add(model);
+            db.SaveChanges();
+            return model.ID;
+        }
     }
 }

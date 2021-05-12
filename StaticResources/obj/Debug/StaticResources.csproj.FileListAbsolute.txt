@@ -1,0 +1,11 @@
+D:\OnlineShop\StaticResources\bin\Debug\StaticResources.dll
+D:\OnlineShop\StaticResources\bin\Debug\StaticResources.pdb
+D:\OnlineShop\StaticResources\bin\Debug\en\StaticResources.resources.dll
+D:\OnlineShop\StaticResources\obj\Debug\StaticResources.csprojAssemblyReference.cache
+D:\OnlineShop\StaticResources\obj\Debug\StaticResources.Resources.resources
+D:\OnlineShop\StaticResources\obj\Debug\StaticResources.Resources.en.resources
+D:\OnlineShop\StaticResources\obj\Debug\StaticResources.csproj.GenerateResource.cache
+D:\OnlineShop\StaticResources\obj\Debug\StaticResources.csproj.CoreCompileInputs.cache
+D:\OnlineShop\StaticResources\obj\Debug\en\StaticResources.resources.dll
+D:\OnlineShop\StaticResources\obj\Debug\StaticResources.dll
+D:\OnlineShop\StaticResources\obj\Debug\StaticResources.pdb

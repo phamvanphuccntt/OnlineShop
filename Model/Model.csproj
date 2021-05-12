@@ -107,6 +107,12 @@
   <ItemGroup>
     <Content Include="Content\PagedList.css" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StaticResources\StaticResources.csproj">
+      <Project>{da4a2591-a787-4966-895a-f9076f54bccb}</Project>
+      <Name>StaticResources</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
