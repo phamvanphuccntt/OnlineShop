@@ -31,11 +31,11 @@ namespace OnlineShop.Controllers
                 var dao = new UserDao();
                 if (dao.checkUserName(model.userName))
                 {
-                    ModelState.AddModelError("", "Username bị trùng");
+                    ModelState.AddModelError("", "Tên đăng nhập đã tồn tại");
                 }
                 else if (dao.checkEmail(model.email))
                 {
-                    ModelState.AddModelError("", "Email bị trùng");
+                    ModelState.AddModelError("", "Email đã tồn tại");
                 }
                 else
                 {
@@ -43,6 +43,14 @@ namespace OnlineShop.Controllers
                     user.UserName = model.userName;
                     user.Password = Common.Encryptor.MD5Hash(model.password);
                     user.Phone = model.phone;
+                    if (!string.IsNullOrEmpty(model.ProvinceID))
+                    {
+                        user.ProvinceID = int.Parse(model.ProvinceID);
+                    }
+                    //if (!string.IsNullOrEmpty(model.DistrictID))
+                    //{
+                    //    user.ProvinceID = int.Parse(model.DistrictID);
+                    //}
                     user.Email = model.email;
                     user.Address = model.address;
                     user.CreateDate = DateTime.Now;
@@ -178,6 +186,76 @@ namespace OnlineShop.Controllers
                 }
             }
             return Redirect("/");
+        }
+
+        public JsonResult loadProvince()
+        {
+            var xmlDoc = XDocument.Load(Server.MapPath(@"~/assets/client/data/Provinces_Data.xml"));
+
+            var xElements = xmlDoc.Element("Root").Elements("Item").Where(x=>x.Attribute("type").Value == "province");
+
+            var list = new List<ProvinceModel>();
+
+            ProvinceModel province = null;
+            foreach (var item in xElements)
+            {
+                province = new ProvinceModel();
+                province.ID = int.Parse(item.Attribute("id").Value);
+                province.Name = item.Attribute("value").Value;
+                list.Add(province);
+            }
+
+            return Json(new {
+                data = list,
+                status = true
+            });
+        }
+
+        public JsonResult loadDistrict(int provinceID)
+        {
+            var xmlDoc = XDocument.Load(Server.MapPath(@"~/assets/client/data/Provinces_Data.xml"));
+            var xElements = xmlDoc.Element("Root").Elements("Item")
+                .Single(x => x.Attribute("type").Value == "province" && int.Parse(x.Attribute("id").Value) == provinceID);
+
+            var list = new List<DistrictModel>();
+            DistrictModel district = null;
+            foreach (var item in xElements.Elements("Item").Where(x=>x.Attribute("type").Value == "district"))
+            {
+                district = new DistrictModel();
+                district.ID = int.Parse(item.Attribute("id").Value);
+                district.Name = item.Attribute("value").Value;
+                district.ProvinceID = int.Parse(xElements.Attribute("id").Value);
+                list.Add(district);
+            }
+            return Json(new
+            {
+                data = list,
+                status = true
+            });
+        }
+        //Sai
+        public JsonResult loadPrecinct(int districtID)
+        {
+            var xmlDoc = XDocument.Load(Server.MapPath(@"~/assets/client/data/Provinces_Data.xml"));
+            // Sai ở đây, chưa query được
+            var xElements = xmlDoc.Element("Root").Elements("Item")
+                .Single(x => x.Attribute("type").Value == "district" && int.Parse(x.Attribute("id").Value) == districtID);
+            
+            var list = new List<PrecinctModel>();
+            PrecinctModel precinct = null;
+            foreach (var item in xElements.Elements("Item").Where(x => x.Attribute("type").Value == "precinct"))
+            {
+                precinct = new PrecinctModel();
+                precinct.ID = int.Parse(item.Attribute("id").Value);
+                precinct.Name = item.Attribute("value").Value;
+                precinct.DistrictID = int.Parse(xElements.Attribute("id").Value);
+                list.Add(precinct);
+            }
+            return Json(new
+            {
+                data = list,
+                status = true
+            });
         }
     }
 }

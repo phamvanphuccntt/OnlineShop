@@ -40,5 +40,14 @@ namespace OnlineShop.Models
         [Display(Name = "Số điện thoại")]
         [Required(ErrorMessage = "Yêu cầu nhập số điện thoại")]
         public string phone { set; get; }
+
+        [Display(Name ="Tỉnh/thành")]
+        public string ProvinceID { get; set; }
+
+        [Display(Name ="Quận/Huyện")]
+        public string DistrictID { get; set; }
+
+        [Display(Name ="Phường/Xã")]
+        public string PrecinctID { get; set; }
     }
 }

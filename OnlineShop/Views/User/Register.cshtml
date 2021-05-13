@@ -4,6 +4,9 @@
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section jsFooter{
+    <script src="/assets/client/js/controller/userController.js"></script>
+}
 
 @using (Html.BeginForm("Register", "User", FormMethod.Post))
 {
@@ -15,7 +18,7 @@
         <hr />
 
         <div class="form-group">
-            <label class = "control-label col-md-2"></label>
+            <label class="control-label col-md-2"></label>
             <div class="col-md-4">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             </div>
@@ -87,6 +90,29 @@
             </div>
         </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProvinceID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownList("ProvinceID", new SelectList(new string[] { }), new { @class = "form-control", @id = "ddlProvince" })
+                @Html.ValidationMessageFor(model => model.ProvinceID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DistrictID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownList("DistrictID", new SelectList(new string[] { }), new { @class = "form-control", @id = "ddlDistrict" })
+                @Html.ValidationMessageFor(model => model.DistrictID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PrecinctID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownList("PrecinctID", new SelectList(new string[] { }), new { @class = "form-control", @id = "ddlPrecinct" })
+                @Html.ValidationMessageFor(model => model.PrecinctID, "", new { @class = "text-danger" })
+            </div>
+        </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-4">
                 <input type="submit" value="Đăng ký" class="btn btn-success" />
