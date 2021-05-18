@@ -42,7 +42,8 @@ namespace OnlineShop.Controllers
 
             return View(model);
         }
-
+        //[OutputCache(Duration = int.MaxValue, VaryByParam = "id")]
+        [OutputCache(CacheProfile = "Cache1DayForProduct")]
         public ActionResult Detail(long id)
         {
             var product = new ProductDao().viewDetail(id);

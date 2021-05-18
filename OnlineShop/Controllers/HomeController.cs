@@ -21,12 +21,15 @@ namespace OnlineShop.Controllers
             return View();
         }
         [ChildActionOnly]
+        //ChildActionOnly chi su dung dc 2 phuong thuc la : Duration va VaryByParam 
+        [OutputCache(Duration = 3600)]
         public ActionResult MainMenu()
         {
             var model = new MenuDao().ListByGroupId(1);
             return PartialView(model);
         }
         [ChildActionOnly]
+        [OutputCache(Duration = 3600)]
         public ActionResult TopMenu()
         {
             var model = new MenuDao().ListByGroupId(2);
@@ -34,6 +37,7 @@ namespace OnlineShop.Controllers
         }
 
         [ChildActionOnly]
+        [OutputCache(Duration = 3600)]
         public ActionResult Footer()
         {
             var model = new FooterDao().getFooter();
@@ -41,6 +45,7 @@ namespace OnlineShop.Controllers
         }
 
         [ChildActionOnly]
+        [OutputCache(Duration = 3600)]
         public PartialViewResult HeaderCart() {
 
             var cart = Session[Common.CommonConstants.CartSession];
