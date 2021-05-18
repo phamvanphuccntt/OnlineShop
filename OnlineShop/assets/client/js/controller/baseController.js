@@ -1,18 +1,18 @@
 ﻿var common = {
     init: function () {
-        common.registerEvent();
+        common.registerEvents();
     },
-    registerEvent: function () {
+    registerEvents: function () {
         $("#txtKeyword").autocomplete({
             minLength: 0,
-            source: function( request, response ) {
+            source: function (request, response) {
                 $.ajax({
                     url: "/Product/ListName",
                     dataType: "json",
                     data: {
                         q: request.term
                     },
-                    success: function( res ) {
+                    success: function (res) {
                         response(res.data);
                     }
                 });
@@ -26,11 +26,11 @@
                 return false;
             }
         })
-     .autocomplete("instance")._renderItem = function (ul, item) {
-         return $("<li>")
-           .append("<a>" + item.label + "</a>")
-           .appendTo(ul);
-     };
+            .autocomplete("instance")._renderItem = function (ul, item) {
+                return $("<li>")
+                    .append("<a>" + item.label + "</a>")
+                    .appendTo(ul);
+            };
     }
 }
 common.init();
